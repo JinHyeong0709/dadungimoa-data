@@ -1,19 +1,19 @@
 {
   "schema": 1,
-  "publishedAt": "2026-09-28T06:14:34.957Z",
+  "publishedAt": "2026-09-28T07:19:54.955Z",
   "programs": {
     "seoul": {
       "file": "seoul.json",
-      "generatedAt": "2026-09-28T06:13:13.259Z",
+      "generatedAt": "2026-09-28T07:18:27.782Z",
       "count": 3009,
-      "sourceFetchedAt": "2026-09-28T06:11:42.467Z",
+      "sourceFetchedAt": "2026-09-28T07:16:50.956Z",
       "sourceFingerprint": "d9ac36dea0ae290e56cf416eb3c0fbdc0ff7bf8b3f49156a411f613a13dbc976"
     },
     "busan": {
       "file": "busan.json",
-      "generatedAt": "2026-09-28T06:14:34.944Z",
+      "generatedAt": "2026-09-28T07:19:54.942Z",
       "count": 3434,
-      "sourceFetchedAt": "2026-09-28T06:11:44.768Z",
+      "sourceFetchedAt": "2026-09-28T07:16:56.538Z",
       "sourceFingerprint": "a89b27444c91d22b445fddd6afd3e941a31af3fae04bf4c648531a7d87a992d9"
     }
   }
