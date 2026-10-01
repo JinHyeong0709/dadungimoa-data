@@ -1,26 +1,26 @@
 {
   "schema": 1,
-  "publishedAt": "2026-10-01T03:40:30.159Z",
+  "publishedAt": "2026-10-01T03:56:02.219Z",
   "programs": {
     "seoul": {
       "file": "seoul.json",
-      "generatedAt": "2026-10-01T03:38:02.063Z",
+      "generatedAt": "2026-10-01T03:53:35.828Z",
       "count": 3007,
-      "sourceFetchedAt": "2026-10-01T03:36:30.670Z",
+      "sourceFetchedAt": "2026-10-01T03:52:04.790Z",
       "sourceFingerprint": "6932012cc196cb4b7f8e6db7492100979ca8b817fbe2ca9ea35cf593b22caf35"
     },
     "busan": {
       "file": "busan.json",
-      "generatedAt": "2026-10-01T03:39:24.899Z",
+      "generatedAt": "2026-10-01T03:54:56.374Z",
       "count": 3447,
-      "sourceFetchedAt": "2026-10-01T03:36:31.746Z",
+      "sourceFetchedAt": "2026-10-01T03:52:06.297Z",
       "sourceFingerprint": "52df519f59fab5eb62910f1398a20f9526f7c19b1a774677731d1bf618659669"
     },
     "chungbuk": {
       "file": "chungbuk.json",
-      "generatedAt": "2026-10-01T03:40:30.148Z",
+      "generatedAt": "2026-10-01T03:56:02.209Z",
       "count": 2877,
-      "sourceFetchedAt": "2026-10-01T03:36:32.499Z",
+      "sourceFetchedAt": "2026-10-01T03:52:07.039Z",
       "sourceFingerprint": "5fc1c67a75621b7871d277733fca902392f180a32bdb6b7128c70558d077f5fb"
     }
   }
