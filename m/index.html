@@ -1,0 +1,158 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>다둥이모아</title>
+<meta name="description" content="다자녀 카드로 혜택을 받을 수 있는 업체 정보">
+<meta property="og:title" content="다둥이모아 — 다자녀 카드 혜택 업체">
+<meta property="og:description" content="서울·부산·충북 다자녀 카드로 혜택을 받을 수 있는 업체를 찾아보세요.">
+<style>
+  /* 앱의 색(src/theme.ts)과 맞춘다 */
+  :root {
+    --bg: #FFFFFF; --muted-bg: #FAF6F7; --card: #FFFFFF; --border: #EDE3E6;
+    --text: #2B1F23; --muted: #7A6A6F; --faint: #B0A2A6;
+    --primary: #9E3350; --primary-soft: #FBEAEF; --on-primary: #FFFFFF;
+    color-scheme: light;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #1C1517; --muted-bg: #261D20; --card: #261D20; --border: #3A2D31;
+      --text: #F4ECEE; --muted: #B5A3A9; --faint: #8C7A80;
+      --primary: #D98BA0; --primary-soft: #3A2129; --on-primary: #1C1517;
+      color-scheme: dark;
+    }
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0; background: var(--bg); color: var(--text);
+    font: 16px/1.6 -apple-system, BlinkMacSystemFont, "Apple SD Gothic Neo", "Noto Sans KR", "Malgun Gothic", sans-serif;
+    padding: max(20px, env(safe-area-inset-top)) 16px max(32px, env(safe-area-inset-bottom));
+  }
+  main { max-width: 560px; margin: 0 auto; display: grid; gap: 16px; }
+  .brand { font-size: 13px; font-weight: 700; color: var(--primary); letter-spacing: .02em; }
+  .chip { display: inline-block; font-size: 12px; color: var(--primary); background: var(--primary-soft);
+          padding: 2px 8px; border-radius: 8px; }
+  h1 { font-size: 24px; line-height: 1.3; margin: 6px 0 0; text-wrap: balance; }
+  .benefit { background: var(--muted-bg); border-radius: 12px; padding: 16px; display: grid; gap: 6px; }
+  .benefit .label { font-size: 13px; font-weight: 700; color: var(--muted); }
+  .benefit .text { white-space: pre-line; }
+  .benefit .note { font-size: 12px; color: var(--faint); }
+  dl { margin: 0; display: grid; grid-template-columns: auto 1fr; gap: 6px 14px; }
+  dt { color: var(--faint); font-size: 13px; padding-top: 2px; }
+  dd { margin: 0; word-break: keep-all; overflow-wrap: anywhere; }
+  a { color: var(--primary); }
+  .actions { display: grid; gap: 8px; }
+  .btn { display: block; text-align: center; text-decoration: none; font-weight: 700;
+         padding: 14px 16px; border-radius: 12px; }
+  .btn.primary { background: var(--primary); color: var(--on-primary); }
+  .btn.secondary { border: 1px solid var(--border); color: var(--text); background: var(--card); }
+  .btn:focus-visible { outline: 2px solid var(--primary); outline-offset: 2px; }
+  .small { font-size: 13px; color: var(--muted); }
+  .center { text-align: center; }
+  [hidden] { display: none !important; }
+</style>
+</head>
+<body>
+<main>
+  <div class="brand">다둥이모아</div>
+
+  <section id="loading" class="small">업체 정보를 불러오는 중입니다…</section>
+
+  <section id="merchant" hidden>
+    <span class="chip" id="category"></span>
+    <h1 id="name"></h1>
+  </section>
+
+  <section id="benefitBox" class="benefit" hidden>
+    <div class="label" id="benefitLabel"></div>
+    <div class="text" id="benefit"></div>
+    <div class="note" id="sourceNote"></div>
+  </section>
+
+  <dl id="info" hidden></dl>
+
+  <section id="notFound" hidden>
+    <h1>업체를 찾을 수 없습니다</h1>
+    <p class="small">참여가 끝났거나 정보가 바뀌었을 수 있습니다. 앱에서 지금 참여 중인 업체를 찾아보세요.</p>
+  </section>
+
+  <section class="actions">
+    <a class="btn primary" id="openApp" href="dadungi://">다둥이모아 앱에서 열기</a>
+    <a class="btn secondary" id="kakao" href="#" hidden target="_blank" rel="noopener">카카오맵에서 보기</a>
+    <a class="btn secondary" href="https://apps.apple.com/kr/app/id6810961078" target="_blank" rel="noopener">App Store에서 받기</a>
+  </section>
+  <p class="small center">Android 앱은 준비 중입니다.</p>
+  <p class="small center">다둥이모아는 개인이 만든 비공식 앱으로, 각 지방자치단체 및 카드 발급사와 무관합니다.</p>
+</main>
+<script>
+  // 앱의 공유 링크(src/lib/merchant-actions.ts)가 ?id=카드:번호 로 연다.
+  // 게시된 카드 데이터(../v1/)를 읽어 그 업체를 찾는다.
+  var PROGRAMS = {
+    seoul: { name: '다둥이 행복카드', region: '서울특별시' },
+    busan: { name: '가족사랑카드', region: '부산광역시' },
+    chungbuk: { name: '다자녀 행복카드', region: '충청북도' }
+  };
+  var $ = function (id) { return document.getElementById(id); };
+
+  // 원본 표기를 글자로 푼다(앱의 displayText 와 같은 규칙만).
+  function displayText(v) {
+    if (!v) return '';
+    return String(v)
+      .replace(/!R!!N!|!R!|!N!/g, '\n')
+      .replace(/<br\s*\/?>/gi, '\n')
+      .replace(/<\/?p\s*>|<\/?p(?![a-z])/gi, '\n')
+      .replace(/javascript:\s*[a-z_$][\w$]*\([^)]*\);?/gi, '')
+      .replace(/&amp;/g, '&').replace(/&lt;/g, '<').replace(/&gt;/g, '>').replace(/&q(?:uo|ou)t;/g, '"')
+      .replace(/\n\s*\n+/g, '\n').trim();
+  }
+  function row(label, valueNode) {
+    var dt = document.createElement('dt'); dt.textContent = label;
+    var dd = document.createElement('dd'); dd.appendChild(valueNode);
+    $('info').appendChild(dt); $('info').appendChild(dd);
+  }
+  function text(t) { return document.createTextNode(t); }
+  function notFound() {
+    $('loading').hidden = true; $('notFound').hidden = false;
+  }
+
+  var id = new URLSearchParams(location.search).get('id') || '';
+  var program = id.split(':')[0];
+  if (id) $('openApp').href = 'dadungi://merchant/' + encodeURIComponent(id);
+
+  if (!PROGRAMS[program]) {
+    notFound();
+  } else {
+    fetch('../v1/' + program + '.json', { cache: 'no-store' })
+      .then(function (r) { if (!r.ok) throw new Error(r.status); return r.json(); })
+      .then(function (data) {
+        var m = (data.merchants || []).find(function (x) { return x.id === id; });
+        if (!m) return notFound();
+        var p = PROGRAMS[program];
+        document.title = displayText(m.name) + ' — 다둥이모아';
+        $('loading').hidden = true;
+        $('merchant').hidden = false; $('benefitBox').hidden = false; $('info').hidden = false;
+        $('category').textContent = m.category || '';
+        $('name').textContent = displayText(m.name);
+        $('benefitLabel').textContent = p.name + ' 혜택';
+        $('benefit').textContent = displayText(m.support) || '등록된 혜택 정보가 없습니다.';
+        var date = data.sourceDate ? data.sourceDate.split('-') : null;
+        $('sourceNote').textContent = '혜택 내용은 업체 사정에 따라 달라질 수 있습니다. 방문 전 전화로 확인하세요.' +
+          (date ? '\n' + p.region + ' 공개 자료 ' + Number(date[0]) + '년 ' + Number(date[1]) + '월 ' + Number(date[2]) + '일 기준' : '');
+        $('sourceNote').style.whiteSpace = 'pre-line';
+        if (m.rawAddr) row('주소', text(m.rawAddr));
+        if (m.tel) {
+          var a = document.createElement('a'); a.href = 'tel:' + m.tel.replace(/[^\d+]/g, ''); a.textContent = m.tel;
+          row('전화', a);
+        }
+        row('카드', text(p.name + ' (' + p.region + ')'));
+        var kakao = m.lat != null
+          ? 'https://map.kakao.com/link/to/' + encodeURIComponent(displayText(m.name)) + ',' + m.lat + ',' + m.lng
+          : 'https://map.kakao.com/link/search/' + encodeURIComponent((displayText(m.name) + ' ' + (m.rawAddr || '')).trim());
+        $('kakao').href = kakao; $('kakao').hidden = false;
+      })
+      .catch(function () { notFound(); });
+  }
+</script>
+</body>
+</html>
