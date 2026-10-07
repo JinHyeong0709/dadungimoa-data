@@ -1,27 +1,41 @@
 {
   "schema": 1,
-  "publishedAt": "2026-10-04T02:49:14.294Z",
+  "publishedAt": "2026-10-07T07:29:32.608Z",
   "programs": {
     "seoul": {
       "file": "seoul.json",
-      "generatedAt": "2026-10-02T00:37:46.739Z",
+      "generatedAt": "2026-10-07T07:16:08.790Z",
       "count": 3007,
-      "sourceFetchedAt": "2026-10-02T00:36:14.936Z",
-      "sourceFingerprint": "6932012cc196cb4b7f8e6db7492100979ca8b817fbe2ca9ea35cf593b22caf35"
+      "sourceFetchedAt": "2026-10-07T07:13:59.252Z",
+      "sourceFingerprint": "9c5386412b687ef277b2959482a4bb35df7039dfb05415095caadb8585f28403"
     },
     "busan": {
       "file": "busan.json",
-      "generatedAt": "2026-10-03T02:05:01.758Z",
+      "generatedAt": "2026-10-07T07:17:59.384Z",
       "count": 3450,
-      "sourceFetchedAt": "2026-10-03T02:01:36.539Z",
-      "sourceFingerprint": "8430f0f0d2fc29c62a4c9f39f16f32387d56aeee9164dfc55dd903216ec06b8c"
+      "sourceFetchedAt": "2026-10-07T07:14:03.394Z",
+      "sourceFingerprint": "e2893a949d29890de70ac1e2bf641a2d1f5a832690986f5606e2243ae0ea12c8"
     },
     "chungbuk": {
       "file": "chungbuk.json",
-      "generatedAt": "2026-10-04T02:49:14.271Z",
+      "generatedAt": "2026-10-07T07:19:18.245Z",
       "count": 2582,
-      "sourceFetchedAt": "2026-10-04T02:43:15.271Z",
-      "sourceFingerprint": "829c72e25cc59e7fbf2e11988cb6c92b6f46b2ff4b5102c66812e6c4446c3a87"
+      "sourceFetchedAt": "2026-10-07T07:14:05.661Z",
+      "sourceFingerprint": "a320df0ea931779054a570ab60792e0cbf13f4f3fb2d673a158e63c2f5e188cc"
+    },
+    "daejeon": {
+      "file": "daejeon.json",
+      "generatedAt": "2026-10-07T07:26:06.996Z",
+      "count": 615,
+      "sourceFetchedAt": "2026-10-07T07:14:09.784Z",
+      "sourceFingerprint": "4d080239c4077ab12df68d53fc84824664fd9b7bcc48a93f1b7799e406e1850b"
+    },
+    "ulsan": {
+      "file": "ulsan.json",
+      "generatedAt": "2026-10-07T07:29:32.599Z",
+      "count": 254,
+      "sourceFetchedAt": "2026-10-07T07:14:11.506Z",
+      "sourceFingerprint": "01e29822aef664a1a3d54e32d9722446c6dd2aee1be0649565eb76e0d2ac0d91"
     }
   }
 }
