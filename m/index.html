@@ -6,7 +6,7 @@
 <title>다둥이모아</title>
 <meta name="description" content="다자녀 카드로 혜택을 받을 수 있는 업체 정보">
 <meta property="og:title" content="다둥이모아 — 다자녀 카드 혜택 업체">
-<meta property="og:description" content="서울·부산·충북 다자녀 카드로 혜택을 받을 수 있는 업체를 찾아보세요.">
+<meta property="og:description" content="서울·부산·충북·대전·울산 다자녀 카드로 혜택을 받을 수 있는 업체를 찾아보세요.">
 <style>
   /* 앱의 색(src/theme.ts)과 맞춘다 */
   :root {
@@ -80,9 +80,9 @@
   <section class="actions">
     <a class="btn primary" id="openApp" href="dadungi://">다둥이모아 앱에서 열기</a>
     <a class="btn secondary" id="kakao" href="#" hidden target="_blank" rel="noopener">카카오맵에서 보기</a>
-    <a class="btn secondary" href="https://apps.apple.com/kr/app/id6810961078" target="_blank" rel="noopener">App Store에서 받기</a>
+    <a class="btn secondary" id="appStore" href="https://apps.apple.com/kr/app/id6810961078" target="_blank" rel="noopener">App Store에서 받기</a>
+    <a class="btn secondary" id="playStore" href="https://play.google.com/store/apps/details?id=com.dadungimoa.app" target="_blank" rel="noopener">Google Play에서 받기</a>
   </section>
-  <p class="small center">Android 앱은 준비 중입니다.</p>
   <p class="small center">다둥이모아는 개인이 만든 비공식 앱으로, 각 지방자치단체 및 카드 발급사와 무관합니다.</p>
 </main>
 <script>
@@ -91,7 +91,9 @@
   var PROGRAMS = {
     seoul: { name: '다둥이 행복카드', region: '서울특별시' },
     busan: { name: '가족사랑카드', region: '부산광역시' },
-    chungbuk: { name: '다자녀 행복카드', region: '충청북도' }
+    chungbuk: { name: '다자녀 행복카드', region: '충청북도' },
+    daejeon: { name: '꿈나무사랑카드', region: '대전광역시' },
+    ulsan: { name: '다자녀 사랑카드', region: '울산광역시' }
   };
   var $ = function (id) { return document.getElementById(id); };
 
@@ -118,7 +120,19 @@
 
   var id = new URLSearchParams(location.search).get('id') || '';
   var program = id.split(':')[0];
-  if (id) $('openApp').href = 'dadungi://merchant/' + encodeURIComponent(id);
+  var PLAY_URL = 'https://play.google.com/store/apps/details?id=com.dadungimoa.app';
+  var ua = navigator.userAgent;
+  var isAndroid = /Android/i.test(ua);
+  var isIOS = /iPhone|iPad|iPod/i.test(ua) || (/Macintosh/.test(ua) && navigator.maxTouchPoints > 1);
+  // 휴대폰에서는 그 기기의 스토어만 보인다. 컴퓨터에서는 둘 다 보인다.
+  if (isAndroid) $('appStore').hidden = true;
+  if (isIOS) $('playStore').hidden = true;
+
+  var path = id ? 'merchant/' + encodeURIComponent(id) : '';
+  // Android 는 intent:// 로 연다. 앱이 없으면 Play 스토어로 넘어간다(카카오톡 인앱 브라우저 포함).
+  $('openApp').href = isAndroid
+    ? 'intent://' + path + '#Intent;scheme=dadungi;package=com.dadungimoa.app;S.browser_fallback_url=' + encodeURIComponent(PLAY_URL) + ';end'
+    : 'dadungi://' + path;
 
   if (!PROGRAMS[program]) {
     notFound();
@@ -136,9 +150,11 @@
         $('name').textContent = displayText(m.name);
         $('benefitLabel').textContent = p.name + ' 혜택';
         $('benefit').textContent = displayText(m.support) || '등록된 혜택 정보가 없습니다.';
-        var date = data.sourceDate ? data.sourceDate.split('-') : null;
+        // 'YYYY-MM-DD', 또는 원본이 달까지만 밝힐 때(대전) 'YYYY-MM'. 앱의 sourceDateLabel 과 같다.
+        var date = /^(\d{4})-(\d{2})(?:-(\d{2}))?$/.exec(data.sourceDate || '');
+        var dateLabel = date ? Number(date[1]) + '년 ' + Number(date[2]) + '월' + (date[3] ? ' ' + Number(date[3]) + '일' : '') : null;
         $('sourceNote').textContent = '혜택 내용은 업체 사정에 따라 달라질 수 있습니다. 방문 전 전화로 확인하세요.' +
-          (date ? '\n' + p.region + ' 공개 자료 ' + Number(date[0]) + '년 ' + Number(date[1]) + '월 ' + Number(date[2]) + '일 기준' : '');
+          (dateLabel ? '\n' + p.region + ' 공개 자료 ' + dateLabel + ' 기준' : '');
         $('sourceNote').style.whiteSpace = 'pre-line';
         if (m.rawAddr) row('주소', text(m.rawAddr));
         if (m.tel) {
