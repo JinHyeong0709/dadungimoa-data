@@ -1,40 +1,40 @@
 {
   "schema": 1,
-  "publishedAt": "2026-10-19T10:57:06.513Z",
+  "publishedAt": "2026-10-20T04:31:53.738Z",
   "programs": {
     "seoul": {
       "file": "seoul.json",
-      "generatedAt": "2026-10-07T07:16:08.790Z",
-      "count": 3007,
-      "sourceFetchedAt": "2026-10-07T07:13:59.252Z",
-      "sourceFingerprint": "9c5386412b687ef277b2959482a4bb35df7039dfb05415095caadb8585f28403"
+      "generatedAt": "2026-10-20T04:28:13.009Z",
+      "count": 3595,
+      "sourceFetchedAt": "2026-10-20T04:21:09.222Z",
+      "sourceFingerprint": "9cf08b2f39b7dec4f7cc34373521c4aeffb46d0a6ba290c94d7d8e467b04c3fd"
     },
     "busan": {
       "file": "busan.json",
-      "generatedAt": "2026-10-19T10:57:06.490Z",
+      "generatedAt": "2026-10-20T04:30:07.280Z",
       "count": 3449,
-      "sourceFetchedAt": "2026-10-19T10:55:13.186Z",
+      "sourceFetchedAt": "2026-10-20T04:21:14.612Z",
       "sourceFingerprint": "c03306be182f7548f4cf269fe3c6a379581c4718f98a999ca9f65c27bfb5f5bb"
     },
     "chungbuk": {
       "file": "chungbuk.json",
-      "generatedAt": "2026-10-07T07:19:18.245Z",
+      "generatedAt": "2026-10-20T04:31:31.876Z",
       "count": 2582,
-      "sourceFetchedAt": "2026-10-07T07:14:05.661Z",
+      "sourceFetchedAt": "2026-10-20T04:21:17.711Z",
       "sourceFingerprint": "a320df0ea931779054a570ab60792e0cbf13f4f3fb2d673a158e63c2f5e188cc"
     },
     "daejeon": {
       "file": "daejeon.json",
-      "generatedAt": "2026-10-07T07:26:06.996Z",
+      "generatedAt": "2026-10-20T04:31:39.013Z",
       "count": 615,
-      "sourceFetchedAt": "2026-10-07T07:14:09.784Z",
+      "sourceFetchedAt": "2026-10-20T04:21:22.855Z",
       "sourceFingerprint": "4d080239c4077ab12df68d53fc84824664fd9b7bcc48a93f1b7799e406e1850b"
     },
     "ulsan": {
       "file": "ulsan.json",
-      "generatedAt": "2026-10-07T07:29:32.599Z",
+      "generatedAt": "2026-10-20T04:31:53.730Z",
       "count": 254,
-      "sourceFetchedAt": "2026-10-07T07:14:11.506Z",
+      "sourceFetchedAt": "2026-10-20T04:21:24.708Z",
       "sourceFingerprint": "01e29822aef664a1a3d54e32d9722446c6dd2aee1be0649565eb76e0d2ac0d91"
     }
   }
