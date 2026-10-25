@@ -1,20 +1,20 @@
 {
   "schema": 1,
-  "publishedAt": "2026-10-23T01:36:50.597Z",
+  "publishedAt": "2026-10-25T01:20:05.117Z",
   "programs": {
     "seoul": {
       "file": "seoul.json",
-      "generatedAt": "2026-10-23T01:36:50.574Z",
-      "count": 3516,
-      "sourceFetchedAt": "2026-10-23T01:33:46.960Z",
-      "sourceFingerprint": "50548ff16a5fe03898b8f108b295e404a9fb400bc1e9e08e7a74f3fb2c7b8341"
+      "generatedAt": "2026-10-25T01:17:30.636Z",
+      "count": 3591,
+      "sourceFetchedAt": "2026-10-25T01:13:45.764Z",
+      "sourceFingerprint": "0d768614250fdbcf0f95ba87b03e4a8a57217a0bcc01a77c69822b3faa2f0f3f"
     },
     "busan": {
       "file": "busan.json",
-      "generatedAt": "2026-10-20T06:08:46.869Z",
-      "count": 3446,
-      "sourceFetchedAt": "2026-10-20T06:02:24.106Z",
-      "sourceFingerprint": "c03306be182f7548f4cf269fe3c6a379581c4718f98a999ca9f65c27bfb5f5bb"
+      "generatedAt": "2026-10-25T01:20:05.092Z",
+      "count": 3455,
+      "sourceFetchedAt": "2026-10-25T01:13:51.206Z",
+      "sourceFingerprint": "3ae0553c1f94586d49541d0bd2d077b84f71faf1730b2d425aa9d90a077be805"
     },
     "chungbuk": {
       "file": "chungbuk.json",
