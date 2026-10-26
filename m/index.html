@@ -6,7 +6,7 @@
 <title>다둥이모아</title>
 <meta name="description" content="다자녀 카드로 혜택을 받을 수 있는 업체 정보">
 <meta property="og:title" content="다둥이모아 — 다자녀 카드 혜택 업체">
-<meta property="og:description" content="서울·부산·충북·대전·울산 다자녀 카드로 혜택을 받을 수 있는 업체를 찾아보세요.">
+<meta property="og:description" content="서울·부산·충북·대전·울산·강원 다자녀 카드로 혜택을 받을 수 있는 업체를 찾아보세요.">
 <style>
   /* 앱의 색(src/theme.ts)과 맞춘다 */
   :root {
@@ -87,14 +87,9 @@
 </main>
 <script>
   // 앱의 공유 링크(src/lib/merchant-actions.ts)가 ?id=카드:번호 로 연다.
+  // 카드 목록은 scripts/web-pages.mjs 가 앱의 카드 설정(src/data/programs.ts)으로 채운다.
   // 게시된 카드 데이터(../v1/)를 읽어 그 업체를 찾는다.
-  var PROGRAMS = {
-    seoul: { name: '다둥이 행복카드', region: '서울특별시' },
-    busan: { name: '가족사랑카드', region: '부산광역시' },
-    chungbuk: { name: '다자녀 행복카드', region: '충청북도' },
-    daejeon: { name: '꿈나무사랑카드', region: '대전광역시' },
-    ulsan: { name: '다자녀 사랑카드', region: '울산광역시' }
-  };
+  var PROGRAMS = {"seoul":{"name":"다둥이 행복카드","region":"서울특별시"},"busan":{"name":"가족사랑카드","region":"부산광역시"},"chungbuk":{"name":"다자녀 행복카드","region":"충청북도"},"daejeon":{"name":"꿈나무사랑카드","region":"대전광역시"},"ulsan":{"name":"다자녀 사랑카드","region":"울산광역시"},"gangwon":{"name":"아이키움카드","region":"강원특별자치도"}};
   var $ = function (id) { return document.getElementById(id); };
 
   // 원본 표기를 글자로 푼다(앱의 displayText 와 같은 규칙만).

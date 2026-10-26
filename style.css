@@ -1,0 +1,38 @@
+:root{--bg:#fff;--muted-bg:#faf6f7;--border:#ede3e6;--text:#2b1f23;--muted:#7a6a6f;--faint:#9a8a8f;
+--primary:#9e3350;--primary-soft:#fbeaef;--on-primary:#fff;color-scheme:light}
+@media (prefers-color-scheme:dark){:root{--bg:#1c1517;--muted-bg:#261d20;--border:#3a2d31;--text:#f4ecee;
+--muted:#b5a3a9;--faint:#8c7a80;--primary:#d98ba0;--primary-soft:#3a2129;--on-primary:#1c1517;color-scheme:dark}}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--text);
+font:16px/1.6 -apple-system,BlinkMacSystemFont,"Apple SD Gothic Neo","Noto Sans KR","Malgun Gothic",sans-serif;
+padding:max(16px,env(safe-area-inset-top)) 16px max(32px,env(safe-area-inset-bottom))}
+main,header,footer{max-width:720px;margin:0 auto}
+a{color:var(--primary)}
+.brand{font-size:14px;font-weight:700;text-decoration:none}
+nav.crumbs{font-size:13px;color:var(--muted);margin:8px 0 0}
+h1{font-size:24px;line-height:1.35;margin:12px 0 8px;word-break:keep-all}
+h2{font-size:19px;margin:32px 0 8px;padding-top:8px;border-top:1px solid var(--border)}
+h3{font-size:16px;margin:0}
+.lead,.small{color:var(--muted)}
+.small{font-size:13px}
+.cta{display:flex;flex-wrap:wrap;gap:8px;background:var(--primary-soft);border-radius:12px;padding:14px;margin:16px 0}
+.cta p{margin:0 0 4px;width:100%;font-size:14px}
+.btn{display:inline-block;text-decoration:none;font-weight:700;font-size:14px;padding:10px 14px;border-radius:10px;
+background:var(--primary);color:var(--on-primary)}
+.chips{display:flex;flex-wrap:wrap;gap:6px;padding:0;margin:8px 0;list-style:none}
+.chips a{display:inline-block;text-decoration:none;font-size:14px;padding:6px 10px;border-radius:999px;
+border:1px solid var(--border);color:var(--text)}
+.chips span{color:var(--muted);font-size:12px;margin-left:4px}
+.m{padding:14px 0;border-bottom:1px solid var(--border)}
+.m p{margin:4px 0}
+.benefit{white-space:pre-line;background:var(--muted-bg);border-radius:8px;padding:8px 10px}
+.m dl{display:grid;grid-template-columns:auto 1fr;gap:2px 12px;margin:6px 0;font-size:14px}
+.m dt{color:var(--faint)}
+.m dd{margin:0;overflow-wrap:anywhere}
+.links{font-size:14px}
+dl.info{display:grid;grid-template-columns:auto 1fr;gap:4px 14px;margin:12px 0}
+dl.info dt{color:var(--faint)}
+dl.info dd{margin:0;overflow-wrap:anywhere}
+ul.guide{padding-left:20px}
+footer{margin-top:40px;padding-top:16px;border-top:1px solid var(--border);font-size:13px;color:var(--muted)}
+footer p{margin:6px 0}
