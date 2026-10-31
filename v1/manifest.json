@@ -1,13 +1,13 @@
 {
   "schema": 1,
-  "publishedAt": "2026-10-30T03:09:43.394Z",
+  "publishedAt": "2026-10-31T02:57:32.851Z",
   "programs": {
     "seoul": {
       "file": "seoul.json",
-      "generatedAt": "2026-10-30T03:09:43.367Z",
+      "generatedAt": "2026-10-31T02:57:32.808Z",
       "count": 3592,
-      "sourceFetchedAt": "2026-10-30T02:38:58.329Z",
-      "sourceFingerprint": "a6928c66551ac50ce1ecfc37eb7f27d35d923eee3bc3ac93aabe3f1678c1e86e"
+      "sourceFetchedAt": "2026-10-31T02:27:02.217Z",
+      "sourceFingerprint": "7670b076873564b7d53482b6a68b4239e08f4a121b8cda601d34c286e9480d81"
     },
     "busan": {
       "file": "busan.json",
