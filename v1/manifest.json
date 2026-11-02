@@ -1,6 +1,6 @@
 {
   "schema": 1,
-  "publishedAt": "2026-11-02T07:07:17.609Z",
+  "publishedAt": "2026-11-02T13:42:28.531Z",
   "programs": {
     "seoul": {
       "file": "seoul.json",
@@ -18,38 +18,38 @@
     },
     "chungbuk": {
       "file": "chungbuk.json",
-      "generatedAt": "2026-10-20T06:11:29.486Z",
+      "generatedAt": "2026-11-02T13:40:43.560Z",
       "count": 2582,
-      "sourceFetchedAt": "2026-10-20T06:02:26.788Z",
-      "sourceFingerprint": "a320df0ea931779054a570ab60792e0cbf13f4f3fb2d673a158e63c2f5e188cc"
+      "sourceFetchedAt": "2026-11-02T13:39:25.238Z",
+      "sourceFingerprint": "87e467fffe882186c02673d1a2082b17f26cb7d3b29b3506b514a82393da1135"
     },
     "daejeon": {
       "file": "daejeon.json",
-      "generatedAt": "2026-10-20T06:11:36.929Z",
+      "generatedAt": "2026-11-02T13:40:50.366Z",
       "count": 615,
-      "sourceFetchedAt": "2026-10-20T06:02:31.915Z",
-      "sourceFingerprint": "4d080239c4077ab12df68d53fc84824664fd9b7bcc48a93f1b7799e406e1850b"
+      "sourceFetchedAt": "2026-11-02T13:39:27.432Z",
+      "sourceFingerprint": "4d5962213b5f521a1a9106cf41a44e60393202d58400a5304c04d31e7b1c895f"
     },
     "ulsan": {
       "file": "ulsan.json",
-      "generatedAt": "2026-10-20T06:11:51.535Z",
+      "generatedAt": "2026-11-02T13:41:03.735Z",
       "count": 254,
-      "sourceFetchedAt": "2026-10-20T06:02:34.404Z",
-      "sourceFingerprint": "01e29822aef664a1a3d54e32d9722446c6dd2aee1be0649565eb76e0d2ac0d91"
+      "sourceFetchedAt": "2026-11-02T13:39:29.475Z",
+      "sourceFingerprint": "cb8808380e2c2c21d390dd364c485450eb5088baccd9c7c77c0b8fc7147c3e30"
     },
     "gangwon": {
       "file": "gangwon.json",
-      "generatedAt": "2026-10-26T17:30:02.442Z",
+      "generatedAt": "2026-11-02T13:41:04.998Z",
       "count": 81,
-      "sourceFetchedAt": "2026-10-26T17:26:08.485Z",
-      "sourceFingerprint": "ac6406323e817dfb73c4315ef9d2ae88ba30c5505689dab979e6aa2028adadb9"
+      "sourceFetchedAt": "2026-11-02T13:39:34.047Z",
+      "sourceFingerprint": "f863cc908eafbc009eb9c45bdaf3b53cb579630bbec94be633cc65176d4d386c"
     },
     "gyeongnam": {
       "file": "gyeongnam.json",
-      "generatedAt": "2026-11-02T07:07:17.585Z",
+      "generatedAt": "2026-11-02T13:42:28.517Z",
       "count": 2111,
-      "sourceFetchedAt": "2026-11-02T07:05:56.532Z",
-      "sourceFingerprint": "dc66345ff77edc60a8a0a462c08254a08d55dc1c758ddbe0ee627fb1777579eb"
+      "sourceFetchedAt": "2026-11-02T13:39:36.302Z",
+      "sourceFingerprint": "010075e8bc2bd5bbda79c32bd9a36724fd3e82ca6b09d69532cafdaf767713ee"
     }
   }
 }
