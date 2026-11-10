@@ -1,61 +1,61 @@
 {
   "schema": 1,
-  "publishedAt": "2026-11-06T01:11:57.735Z",
+  "publishedAt": "2026-11-10T06:48:38.606Z",
   "programs": {
     "seoul": {
       "file": "seoul.json",
-      "generatedAt": "2026-11-06T01:06:57.824Z",
-      "count": 3588,
-      "sourceFetchedAt": "2026-11-06T01:03:45.476Z",
-      "sourceFingerprint": "a3e2c407a2d4e3aa7640a8c9daafcedffa6894e611ad65ae858b07f942335d2b"
+      "generatedAt": "2026-11-10T06:43:21.216Z",
+      "count": 3731,
+      "sourceFetchedAt": "2026-11-10T06:39:52.328Z",
+      "sourceFingerprint": "b6e41c90a4446da9cbb80fe150b3910a7274552b4f1debd76fb52a6647579f36"
     },
     "busan": {
       "file": "busan.json",
-      "generatedAt": "2026-11-06T01:09:03.409Z",
+      "generatedAt": "2026-11-10T06:45:34.089Z",
       "count": 3457,
-      "sourceFetchedAt": "2026-11-06T01:03:49.079Z",
+      "sourceFetchedAt": "2026-11-10T06:39:57.421Z",
       "sourceFingerprint": "5222bff406d270137942bcb35bbc9f4e7c0dbf60c6983a2996597faaa4fd2136"
     },
     "chungbuk": {
       "file": "chungbuk.json",
-      "generatedAt": "2026-11-06T01:10:09.114Z",
+      "generatedAt": "2026-11-10T06:46:43.713Z",
       "count": 2582,
-      "sourceFetchedAt": "2026-11-06T01:03:51.587Z",
+      "sourceFetchedAt": "2026-11-10T06:40:00.091Z",
       "sourceFingerprint": "87e467fffe882186c02673d1a2082b17f26cb7d3b29b3506b514a82393da1135"
     },
     "daejeon": {
       "file": "daejeon.json",
-      "generatedAt": "2026-11-06T01:10:15.630Z",
+      "generatedAt": "2026-11-10T06:46:50.822Z",
       "count": 615,
-      "sourceFetchedAt": "2026-11-06T01:03:53.629Z",
+      "sourceFetchedAt": "2026-11-10T06:40:02.355Z",
       "sourceFingerprint": "0bea9a7f14496b5709c996f00257e1cee43535d58b6b54c85103231cdb496b15"
     },
     "ulsan": {
       "file": "ulsan.json",
-      "generatedAt": "2026-11-06T01:10:29.046Z",
+      "generatedAt": "2026-11-10T06:47:04.879Z",
       "count": 254,
-      "sourceFetchedAt": "2026-11-06T01:03:55.567Z",
+      "sourceFetchedAt": "2026-11-10T06:40:05.063Z",
       "sourceFingerprint": "cb8808380e2c2c21d390dd364c485450eb5088baccd9c7c77c0b8fc7147c3e30"
     },
     "gangwon": {
       "file": "gangwon.json",
-      "generatedAt": "2026-11-06T01:10:30.291Z",
+      "generatedAt": "2026-11-10T06:47:06.208Z",
       "count": 81,
-      "sourceFetchedAt": "2026-11-06T01:03:59.130Z",
+      "sourceFetchedAt": "2026-11-10T06:40:12.496Z",
       "sourceFingerprint": "f863cc908eafbc009eb9c45bdaf3b53cb579630bbec94be633cc65176d4d386c"
     },
     "gyeongnam": {
       "file": "gyeongnam.json",
-      "generatedAt": "2026-11-06T01:11:51.381Z",
+      "generatedAt": "2026-11-10T06:48:32.093Z",
       "count": 2111,
-      "sourceFetchedAt": "2026-11-06T01:04:01.309Z",
+      "sourceFetchedAt": "2026-11-10T06:40:14.547Z",
       "sourceFingerprint": "010075e8bc2bd5bbda79c32bd9a36724fd3e82ca6b09d69532cafdaf767713ee"
     },
     "gyeongbuk": {
       "file": "gyeongbuk.json",
-      "generatedAt": "2026-11-06T01:11:57.726Z",
+      "generatedAt": "2026-11-10T06:48:38.596Z",
       "count": 193,
-      "sourceFetchedAt": "2026-11-06T01:04:03.420Z",
+      "sourceFetchedAt": "2026-11-10T06:40:16.427Z",
       "sourceFingerprint": "19920bdfb3b2f1378d141337538acdb03e3f9b32df90b8299bc6cdbdd3555108"
     }
   }
