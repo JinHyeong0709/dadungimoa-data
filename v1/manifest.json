@@ -1,6 +1,6 @@
 {
   "schema": 1,
-  "publishedAt": "2026-11-26T23:49:34.854Z",
+  "publishedAt": "2026-11-26T23:59:21.917Z",
   "programs": {
     "seoul": {
       "file": "seoul.json",
@@ -25,10 +25,10 @@
     },
     "daejeon": {
       "file": "daejeon.json",
-      "generatedAt": "2026-11-26T23:49:34.854Z",
-      "count": 615,
-      "sourceFetchedAt": "2026-11-10T06:40:02.355Z",
-      "sourceFingerprint": "0bea9a7f14496b5709c996f00257e1cee43535d58b6b54c85103231cdb496b15"
+      "generatedAt": "2026-11-26T23:59:21.907Z",
+      "count": 574,
+      "sourceFetchedAt": "2026-11-26T23:58:54.272Z",
+      "sourceFingerprint": "940362e657524b1eeccdac34a64a4a66de251a2a5697d55bcf2d2f4532617e83"
     },
     "ulsan": {
       "file": "ulsan.json",
